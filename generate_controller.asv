@@ -1,0 +1,16 @@
+clear;
+
+[A, B, C, D] = linmod('model_lin');
+
+sys = ss(A,B,C,D);
+
+Sc = ctrb(A,B);
+So = obsv(A,C);
+
+Q = [0 0 0 0;
+    0 0 0 0;
+    0 0 1 0;
+    0 0 0 0];
+R = [1];
+
+K = lqr(sys, A, B);
