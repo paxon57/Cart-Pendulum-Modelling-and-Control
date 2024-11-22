@@ -26,7 +26,7 @@ for k = 1:50:size(out.tout,1)
     str = ['Pendulum Simulation, t=' num2str(k/1000 - 0.001, 2) 's'];
     title(str);
     xlim([x_min - 0.5, x_max + 0.5]);
-    ylim([-2 2]);
+    ylim([-2, 2]);
     drawnow;
 
     elapsed = toc;
